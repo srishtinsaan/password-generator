@@ -1,34 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react"
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [length, setLength] = useState(9)
+  const [numberAllowed, setNumberAllowed] = useState(false);
+  const [charAllowed, setCharAllowed] = useState(false);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className='text-white mt-50'>
+      <div className='w-100 bg-gray-600 rounded-md'>
+        <div className="flex justify-center">
+            <input type="text" name="" id="" className="w-60 bg-gray-300 h-10 mx-4 my-10 rounded-md text-black" placeholder="password"/>
+            <button className="ml-4 bg-orange-800 mx-4 my-10 h-10 p-1 rounded-md">copy</button>
+        </div>
+        <div className="flex mb-4 mx-4 gap-4 text-sm">
+          <input type="range" name="" id="" className="mb-4 cursor-pointer"/>
+          <label className="text-orange-600">Length : 6</label>
+          <div className="flex items-center gap-1">
+            <input type="checkbox" name="" id="" />
+            <label className="text-orange-600">Numbers</label>
+          </div>
+          <div className="flex items-center gap-1">
+            <input type="checkbox" name="" id="" />
+            <label className="text-orange-600">Characters</label>
+          </div>
+          
+
+        </div>
+        
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 
